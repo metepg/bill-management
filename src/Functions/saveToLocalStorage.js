@@ -26,6 +26,7 @@ function saveToLocalStorage(values) {
 
   // No duplicate group names
   if (groupNameExists(groupName)) {
+    // eslint-disable-next-line no-alert
     alert('Group name already exists!');
     return false;
   }
