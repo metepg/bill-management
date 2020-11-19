@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import FormGroup from "react-bootstrap/FormGroup/";
+import saveToLocalStorage from '../../Functions/saveToLocalStorage';
 import './style.css';
 
 function New(appProps) {
@@ -9,11 +9,12 @@ function New(appProps) {
 
   function formSubmit(e) {
     e.preventDefault();
+
+    // Get form values as object
     const formData = new FormData(e.target);
     const formDataObj = Object.fromEntries(formData.entries());
-    console.log(formDataObj);
-    console.log(formDataObj.groupName);
-    changePage('page2', 'addBill');
+
+    if (saveToLocalStorage(formDataObj)) changePage('page2', 'addBill');
   }
 
   return (
