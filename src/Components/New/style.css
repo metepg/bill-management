@@ -1,0 +1,14 @@
+#controlled-tabpane-new {
+  margin: 5rem;
+}
+
+.form-control {
+  text-align: center;
+  justify-content: center;
+}
+
+.form-control option {
+  justify-content: center;
+  color: red;
+  text-align-last: center;
+}
