@@ -1,6 +1,7 @@
 import groupNameExists from './groupNameExists';
 import load from './loadFromLocalStorage';
 import save from './saveToLocalStorage';
+import handleFormData from './handleFormData';
 
 // TODO:
 // Change error handling if group name exists
@@ -8,40 +9,32 @@ import save from './saveToLocalStorage';
 
 // Validate form
 // Save group values to localStorage
-function validate(values) {
-  const groupData = values;
-  const { groupName } = groupData;
+function validate(formData) {
+  // Create group object from formData
+  const newGroup = handleFormData(formData);
 
-  // Delete groupName property so object has only usernames as properties
-  delete groupData.groupName;
-
-  // Make array from usernames
-  // Make object from group name and usernames
-  const users = Object.values(values);
-  const group = { groupName, users };
-
-  // Get groups from localStorage
-  const prevGroups = load('savedGroups');
+  // Get saved groups from localStorage
+  const savedGroups = load('savedGroups');
 
   // If no groups saved yet save group as new array
-  if (!prevGroups) {
-    const firstGroup = [group];
+  if (!savedGroups) {
+    const firstGroup = [newGroup];
     save('savedGroups', firstGroup);
     save('currentGroup', firstGroup);
     return true;
   }
 
   // No duplicate group names
-  if (groupNameExists(groupName)) {
+  if (groupNameExists(newGroup.groupName, savedGroups)) {
     alert('Group name already exists!');
     return false;
   }
 
   // Add new group to previously created groups array
   // Save current group to localStorage
-  prevGroups.push(group);
-  save('savedGroups', prevGroups);
-  save('currentGroup', group);
+  savedGroups.push(newGroup);
+  save('savedGroups', savedGroups);
+  save('currentGroup', newGroup);
   return true;
 }
 

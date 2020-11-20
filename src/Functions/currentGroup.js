@@ -1,11 +1,9 @@
 import load from './loadFromLocalStorage';
 
-// Get current group data from localStorage based on name
+// From localStorage:
+// Get current groups data matching the group name
 function currentGroup(name) {
   const groups = load('savedGroups');
-  if (!groups) {
-    return false;
-  }
   return groups.filter((group) => group.groupName === name);
 }
 
