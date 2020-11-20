@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import saveToLocalStorage from '../../Functions/saveToLocalStorage';
+import validate from '../../Functions/validate';
 import './style.css';
 
 function New(appProps) {
@@ -14,7 +14,8 @@ function New(appProps) {
     const formData = new FormData(e.target);
     const formDataObj = Object.fromEntries(formData.entries());
 
-    if (saveToLocalStorage(formDataObj)) changePage('page2', 'addBill');
+    // If values are valid go to next page
+    if (validate(formDataObj)) changePage('page2', 'bills');
   }
 
   return (

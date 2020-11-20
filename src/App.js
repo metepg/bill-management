@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <header className="app-container">
+    <main className="app-container">
       {page === 'main' ? (
         <Tabs
           id="controlled"
@@ -27,7 +27,7 @@ function App() {
             <New changePage={changePage} />
           </Tab>
           <Tab eventKey="load" title="Load">
-            <Load />
+            <Load changePage={changePage} />
           </Tab>
         </Tabs>
       )
@@ -37,9 +37,9 @@ function App() {
             activeKey={tab}
             onSelect={(k) => setTab(k)}
           >
-            <Tab eventKey="addBill" title="addBill" />
-            <Tab eventKey="showBills" title="showBills" />
-            <Tab eventKey="exit" title="exit">
+            <Tab eventKey="bills" title="Bills" />
+            <Tab eventKey="manage" title="Manage" />
+            <Tab eventKey="exit" title="Exit">
               <button
                 type="button"
                 onClick={() => changePage('main', 'new')}
@@ -51,7 +51,7 @@ function App() {
           </Tabs>
         )}
 
-    </header>
+    </main>
   );
 }
 
