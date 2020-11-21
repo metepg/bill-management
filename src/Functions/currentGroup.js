@@ -7,7 +7,7 @@ import load from './loadFromLocalStorage';
  */
 function currentGroup(name) {
   const groups = load('savedGroups');
-  return groups.filter((group) => group.groupName === name);
+  return groups.find((group) => group.groupName === name);
 }
 
 export default currentGroup;
