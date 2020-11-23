@@ -20,6 +20,7 @@ function App() {
     <main className="app-container">
       {page === 'main' ? (
         <Tabs
+          transition={false}
           id="controlled"
           activeKey={tab}
           onSelect={(k) => setTab(k)}
@@ -33,6 +34,7 @@ function App() {
         </Tabs>
       ) : (
         <Tabs
+          transition={false}
           id="controlled"
           activeKey={tab}
           onSelect={(k) => setTab(k)}
