@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/metepg/bill-management.git/static/css/main.7cf47e41.chunk.css",
+    "main.js": "/metepg/bill-management.git/static/js/main.43cfe336.chunk.js",
+    "main.js.map": "/metepg/bill-management.git/static/js/main.43cfe336.chunk.js.map",
+    "runtime-main.js": "/metepg/bill-management.git/static/js/runtime-main.b8b4c76d.js",
+    "runtime-main.js.map": "/metepg/bill-management.git/static/js/runtime-main.b8b4c76d.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/metepg/bill-management.git/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.d0dd9eca.chunk.js": "/metepg/bill-management.git/static/js/2.d0dd9eca.chunk.js",
+    "static/js/2.d0dd9eca.chunk.js.map": "/metepg/bill-management.git/static/js/2.d0dd9eca.chunk.js.map",
+    "index.html": "/metepg/bill-management.git/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/metepg/bill-management.git/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.7cf47e41.chunk.css.map": "/metepg/bill-management.git/static/css/main.7cf47e41.chunk.css.map",
+    "static/js/2.d0dd9eca.chunk.js.LICENSE.txt": "/metepg/bill-management.git/static/js/2.d0dd9eca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8b4c76d.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.d0dd9eca.chunk.js",
+    "static/css/main.7cf47e41.chunk.css",
+    "static/js/main.43cfe336.chunk.js"
+  ]
+}
