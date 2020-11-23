@@ -3,6 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import New from './Components/New/New';
 import Load from './Components/Load/Load';
+import Bills from './Components/Bills/Bills';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -30,27 +31,27 @@ function App() {
             <Load changePage={changePage} />
           </Tab>
         </Tabs>
-      )
-        : (
-          <Tabs
-            id="controlled"
-            activeKey={tab}
-            onSelect={(k) => setTab(k)}
-          >
-            <Tab eventKey="bills" title="Bills" />
-            <Tab eventKey="manage" title="Manage" />
-            <Tab eventKey="exit" title="Exit">
-              <button
-                type="button"
-                onClick={() => changePage('main', 'new')}
-                style={{ marginTop: '5rem', fontSize: '2rem' }}
-              >
-                Exit
-              </button>
-            </Tab>
-          </Tabs>
-        )}
-
+      ) : (
+        <Tabs
+          id="controlled"
+          activeKey={tab}
+          onSelect={(k) => setTab(k)}
+        >
+          <Tab eventKey="bills" title="Bills">
+            <Bills />
+          </Tab>
+          <Tab eventKey="manage" title="Manage" />
+          <Tab eventKey="exit" title="Exit">
+            <button
+              type="button"
+              onClick={() => changePage('main', 'new')}
+              style={{ marginTop: '5rem', fontSize: '2rem' }}
+            >
+              Exit
+            </button>
+          </Tab>
+        </Tabs>
+      )}
     </main>
   );
 }

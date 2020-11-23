@@ -22,15 +22,40 @@ function New(appProps) {
     <Form onSubmit={formSubmit}>
       <Form.Group controlId="groupName">
         <Form.Label>Group name</Form.Label>
-        <Form.Control type="text" placeholder="The meters" name="groupName" defaultValue="The Meters" />
+        <Form.Control
+          type="text"
+          placeholder="The meters"
+          name="groupName"
+          defaultValue="The Meters"
+        />
       </Form.Group>
       <Form.Group controlId="users">
         <Form.Label>Users</Form.Label>
-        <Form.Control required type="text" placeholder="User 1" name="user1" defaultValue="eka nimi" />
-        <Form.Control required type="text" placeholder="User 2" name="user2" defaultValue="toka nimi" />
-        <Form.Control required type="text" placeholder="User 3" name="user3" defaultValue="kolmas nimi" />
+        <Form.Control
+          required
+          type="text"
+          placeholder="User 1"
+          name="user1"
+          defaultValue="eka nimi"
+        />
+        <Form.Control
+          required
+          type="text"
+          placeholder="User 2"
+          name="user2"
+          defaultValue="toka nimi"
+        />
+        <Form.Control
+          required
+          type="text"
+          placeholder="User 3"
+          name="user3"
+          defaultValue="kolmas nimi"
+        />
       </Form.Group>
-      <Button variant="primary" type="submit">Submit</Button>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
   );
 }

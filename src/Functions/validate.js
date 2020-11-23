@@ -17,10 +17,11 @@ function validate(formData) {
   const savedGroups = load('savedGroups');
 
   // If no groups saved yet save group as new array
+  // Save group as object to localStorage currentGroup
   if (!savedGroups) {
-    const firstGroup = [newGroup];
-    save('savedGroups', firstGroup);
+    const firstGroup = newGroup;
     save('currentGroup', firstGroup);
+    save('savedGroups', [firstGroup]);
     return true;
   }
 
