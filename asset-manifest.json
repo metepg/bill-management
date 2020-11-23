@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/metepg/bill-management/static/css/main.7cf47e41.chunk.css",
-    "main.js": "/metepg/bill-management/static/js/main.43cfe336.chunk.js",
-    "main.js.map": "/metepg/bill-management/static/js/main.43cfe336.chunk.js.map",
-    "runtime-main.js": "/metepg/bill-management/static/js/runtime-main.65943e3c.js",
-    "runtime-main.js.map": "/metepg/bill-management/static/js/runtime-main.65943e3c.js.map",
-    "static/css/2.1a02f21c.chunk.css": "/metepg/bill-management/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.d0dd9eca.chunk.js": "/metepg/bill-management/static/js/2.d0dd9eca.chunk.js",
-    "static/js/2.d0dd9eca.chunk.js.map": "/metepg/bill-management/static/js/2.d0dd9eca.chunk.js.map",
-    "index.html": "/metepg/bill-management/index.html",
-    "static/css/2.1a02f21c.chunk.css.map": "/metepg/bill-management/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.7cf47e41.chunk.css.map": "/metepg/bill-management/static/css/main.7cf47e41.chunk.css.map",
-    "static/js/2.d0dd9eca.chunk.js.LICENSE.txt": "/metepg/bill-management/static/js/2.d0dd9eca.chunk.js.LICENSE.txt"
+    "main.css": "/bill-management/static/css/main.7cf47e41.chunk.css",
+    "main.js": "/bill-management/static/js/main.43cfe336.chunk.js",
+    "main.js.map": "/bill-management/static/js/main.43cfe336.chunk.js.map",
+    "runtime-main.js": "/bill-management/static/js/runtime-main.b8cd802b.js",
+    "runtime-main.js.map": "/bill-management/static/js/runtime-main.b8cd802b.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/bill-management/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.d0dd9eca.chunk.js": "/bill-management/static/js/2.d0dd9eca.chunk.js",
+    "static/js/2.d0dd9eca.chunk.js.map": "/bill-management/static/js/2.d0dd9eca.chunk.js.map",
+    "index.html": "/bill-management/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/bill-management/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.7cf47e41.chunk.css.map": "/bill-management/static/css/main.7cf47e41.chunk.css.map",
+    "static/js/2.d0dd9eca.chunk.js.LICENSE.txt": "/bill-management/static/js/2.d0dd9eca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.65943e3c.js",
+    "static/js/runtime-main.b8cd802b.js",
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.d0dd9eca.chunk.js",
     "static/css/main.7cf47e41.chunk.css",
