@@ -21,6 +21,7 @@ function AddBill() {
     // Set input field value with 2 decimals
     // Save user input to correct username
     const input = Number(e.value).toFixed(2);
+    e.value = input;
     usersPaid = {
       ...usersPaid,
       [e.name]: Number(input),
