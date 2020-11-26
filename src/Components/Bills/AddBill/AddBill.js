@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import Form from './AddBillForm';
-import saveBill from '../../../Functions/AddBill/handleAddBillForm';
 import load from '../../../Functions/loadFromLocalStorage';
 import './style.css';
 
@@ -8,7 +7,8 @@ function AddBill() {
   const { users } = load('currentGroup');
   const totalSum = useRef(0);
 
-  // Set usernames array values as keys in object
+  // Create object
+  // Set usernames as keys
   let usersPaid = {};
   users.forEach((key) => {
     usersPaid[key] = 0;
@@ -39,7 +39,6 @@ function AddBill() {
   return (
     <section className="add-bill-controller">
       <Form
-        saveBill={saveBill}
         saveValue={saveValue}
         userNames={users}
         usersPaid={usersPaid}
@@ -49,4 +48,4 @@ function AddBill() {
   );
 }
 
-export default AddBill;
+export default React.memo(AddBill);

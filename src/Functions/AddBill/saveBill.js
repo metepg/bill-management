@@ -3,15 +3,11 @@ import load from '../loadFromLocalStorage';
 import update from '../updateSavedGroups';
 
 function getUserInfo(data) {
-  let billInfo = data;
+  const billInfo = data;
+  // Remove all keys except how much users paid
   delete billInfo.description;
   delete billInfo.evenShares;
   delete billInfo.total;
-
-  // Make array of objects from object key/value
-  billInfo = Object.keys(billInfo)
-    .map((key) => ({ name: key, paid: billInfo[key] }));
-
   return billInfo;
 }
 
@@ -23,12 +19,13 @@ function saveBill(currentGroup, bill) {
   else group.bills.push(bill);
   save('currentGroup', group);
   update('savedGroups', group);
-  console.log(load('savedGroups'));
   return true;
 }
 
-function handleAddBillForm(form) {
+function handleAddBillForm(form, submitBtn) {
   form.preventDefault();
+  const button = submitBtn;
+  button.current.disabled = true;
   // Get form values as object
   const formData = new FormData(form.target);
   const values = Object.fromEntries(formData.entries());
@@ -40,6 +37,9 @@ function handleAddBillForm(form) {
   };
   const currentGroup = load('currentGroup');
   saveBill(currentGroup, data);
+  button.current.disabled = false;
+  alert('Saved');
+  return true;
 }
 
 export default handleAddBillForm;

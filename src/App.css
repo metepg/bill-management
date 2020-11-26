@@ -4,6 +4,7 @@
   height: 750px;
   margin: 3rem auto;
   text-align: center;
+  background-color: #fefefe;
 }
 
 .nav-tabs {
@@ -11,7 +12,10 @@
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: none;
+  }
   .app-container {
     width: 500px;
     height: 750px;

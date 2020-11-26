@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import saveBill from '../../../Functions/AddBill/saveBill';
 
 function AddBillForm(AddBillProps) {
   const {
     userNames,
     saveValue,
-    saveBill,
     totalSum,
   } = AddBillProps;
+
+  const formRef = useRef();
+  const buttonRef = useRef();
 
   // Create input fields according to usernames
   function getInputFields(users) {
     return users.map((name) => (
       <React.Fragment key={name}>
-        <Form.Label>{name}</Form.Label>
+        <Form.Label>
+          {name}
+        </Form.Label>
         <Form.Control
           onBlur={(e) => saveValue(e.target)}
           required
@@ -22,6 +27,9 @@ function AddBillForm(AddBillProps) {
           type="number"
           step="0.01"
           placeholder="0.00"
+          onKeyDown={(e) => (e.key === 'Enter'
+            ? e.preventDefault()
+            : null)}
         />
         <br />
       </React.Fragment>
@@ -29,16 +37,30 @@ function AddBillForm(AddBillProps) {
   }
 
   return (
-    <Form onSubmit={saveBill}>
+    <Form
+      ref={formRef}
+      onSubmit={(e) => {
+        saveBill(e, buttonRef)
+          ? formRef.current.reset()
+          : alert('Something went wrong!');
+        buttonRef.current.disabled = false;
+      }}
+    >
       <Form.Label
         style={{ fontSize: '1.5rem', marginBottom: '1rem' }}
+        onKeyDown={(e) => (e.key === 'Enter'
+          ? e.preventDefault()
+          : null)}
       >
-        Description
+        Title
         <Form.Control
           type="text"
           name="description"
           required
-          placeholder="Description/tag"
+          placeholder="Bill title"
+          onKeyDown={(e) => (e.key === 'Enter'
+            ? e.preventDefault()
+            : null)}
         />
       </Form.Label>
       <Form.Group controlId="usersPaid">
@@ -67,11 +89,14 @@ function AddBillForm(AddBillProps) {
           className="toggle"
           type="checkbox"
           defaultChecked
+          onKeyDown={(e) => (e.key === 'Enter'
+            ? e.preventDefault()
+            : null)}
         />
       </Form.Label>
       <br />
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" ref={buttonRef}>
         Submit
       </Button>
     </Form>
