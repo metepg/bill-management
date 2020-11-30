@@ -8,3 +8,7 @@
   font-size: 1.1rem;
   border-radius: 30px;
 }
+
+.table td {
+  width: 33%;
+}

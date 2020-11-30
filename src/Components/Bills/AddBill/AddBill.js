@@ -3,6 +3,9 @@ import Form from './AddBillForm';
 import load from '../../../Functions/loadFromLocalStorage';
 import './style.css';
 
+// TODO:
+// Fix functions updatefield and saveValue
+
 function AddBill() {
   const { users } = load('currentGroup');
   const totalSum = useRef(0);
@@ -22,17 +25,16 @@ function AddBill() {
 
   // Handle user inputs
   function saveValue(e) {
-    const input = updateField(e);
+    const userPaid = Number(updateField(e));
     // Save user input to correct username
-    e.value = input;
     usersPaid = {
       ...usersPaid,
-      [e.name]: Number(input),
+      [e.name]: userPaid,
     };
 
     // Calulate total sum value from user inputs
-    totalSum.current.value = Object.values(usersPaid)
-      .reduce((a, b) => a + b)
+    totalSum.current.value = Number(Object.values(usersPaid)
+      .reduce((a, b) => a + b))
       .toFixed(2);
   }
 

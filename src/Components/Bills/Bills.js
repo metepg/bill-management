@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import AddBill from './AddBill/AddBill';
+import ShowBills from './ShowBills/ShowBills';
+import load from '../../Functions/loadFromLocalStorage';
 import './style.css';
 
 function Bills() {
   const [tab, setTab] = useState('addBill');
+  const currentGroup = load('currentGroup');
   return (
     <Tabs
       transition={false}
@@ -23,7 +26,7 @@ function Bills() {
         <AddBill />
       </Tab>
       <Tab eventKey="showBill" title="Show bills">
-        <h1>ShowBill</h1>
+        <ShowBills currentGroup={currentGroup} />
       </Tab>
     </Tabs>
   );

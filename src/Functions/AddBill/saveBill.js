@@ -8,7 +8,10 @@ function getUserInfo(data) {
   delete billInfo.description;
   delete billInfo.evenShares;
   delete billInfo.total;
-  return billInfo;
+
+  // Return array of objects
+  return Object.entries(billInfo)
+    .map(([name, paid]) => ({ name, paid }));
 }
 
 // If no bills saved yet
@@ -31,7 +34,7 @@ function handleAddBillForm(form, submitBtn) {
   const values = Object.fromEntries(formData.entries());
   const data = {
     description: values.description,
-    total: values.total,
+    total: Number(values.total),
     evenShares: !!values.evenShares,
     details: getUserInfo(values),
   };
