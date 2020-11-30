@@ -18,7 +18,18 @@ function BillTable(showBillProps) {
         <tr>
           <td>{user.name}</td>
           <td>{`${user.paid} €`}</td>
-          <td>{`${valueChange(user.paid)} €`}</td>
+          <td
+          // Green color if user paid more than needed
+          // Red color if user paid less than needed
+            style={{
+              color: valueChange(user.paid) >= 0
+                ? 'green'
+                : 'red',
+            }}
+          >
+            {`${valueChange(user.paid)} €`}
+
+          </td>
         </tr>
       </React.Fragment>
     )) : null;
@@ -41,9 +52,9 @@ function BillTable(showBillProps) {
                 {billData}
               </tbody>
             </Table>
-            <p style={{ textAlign: 'center' }}>
+            <h4 style={{ textAlign: 'center' }}>
               {`Total ${currentBill.total} €`}
-            </p>
+            </h4>
           </>
         )
         : null}

@@ -39,7 +39,8 @@ function ShowBills(billsProps) {
             <hr />
             <Table currentBill={currentBill} />
           </>
-        ) : <h4>No bills saved</h4>}
+        )
+        : <h4>No bills saved</h4>}
     </>
   );
 }
