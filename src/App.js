@@ -3,6 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import New from './Components/New/New';
 import Load from './Components/Load/Load';
+import Bills from './Components/Bills/Bills';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -16,9 +17,10 @@ function App() {
   }
 
   return (
-    <header className="app-container">
+    <main className="app-container">
       {page === 'main' ? (
         <Tabs
+          transition={false}
           id="controlled"
           activeKey={tab}
           onSelect={(k) => setTab(k)}
@@ -27,31 +29,32 @@ function App() {
             <New changePage={changePage} />
           </Tab>
           <Tab eventKey="load" title="Load">
-            <Load />
+            <Load changePage={changePage} />
           </Tab>
         </Tabs>
-      )
-        : (
-          <Tabs
-            id="controlled"
-            activeKey={tab}
-            onSelect={(k) => setTab(k)}
-          >
-            <Tab eventKey="addBill" title="addBill" />
-            <Tab eventKey="showBills" title="showBills" />
-            <Tab eventKey="exit" title="exit">
-              <button
-                type="button"
-                onClick={() => changePage('main', 'new')}
-                style={{ marginTop: '5rem', fontSize: '2rem' }}
-              >
-                Exit
-              </button>
-            </Tab>
-          </Tabs>
-        )}
-
-    </header>
+      ) : (
+        <Tabs
+          transition={false}
+          id="controlled"
+          activeKey={tab}
+          onSelect={(k) => setTab(k)}
+        >
+          <Tab eventKey="bills" title="Bills">
+            <Bills />
+          </Tab>
+          <Tab eventKey="manage" title="Manage" />
+          <Tab eventKey="exit" title="Exit">
+            <button
+              type="button"
+              onClick={() => changePage('main', 'new')}
+              style={{ marginTop: '5rem', fontSize: '2rem' }}
+            >
+              Exit
+            </button>
+          </Tab>
+        </Tabs>
+      )}
+    </main>
   );
 }
 
