@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import Edit from './EditBills/EditBills';
 import Table from './BillTable';
 import totalSum from '../../../Functions/groupTotalSum';
 
 function ShowBills(billsProps) {
-  const { currentGroup } = billsProps;
+  const { currentGroup, editBill, editMode } = billsProps;
   const { bills } = currentGroup;
   const [currentBill, setCurrentBill] = useState();
 
@@ -22,22 +23,32 @@ function ShowBills(billsProps) {
     ))
     : null;
 
-  const total = bills
-    ? (
-      <h4>
-        {`Total: ${totalSum(bills)} €`}
-      </h4>
-    )
-    : null;
   return (
     <>
       {bills
         ? (
           <>
-            {billElements}
-            {total}
-            <hr />
-            <Table currentBill={currentBill} />
+            {editMode
+              ? <h3>{`Editing ${currentBill.description}`}</h3>
+              : (
+                <>
+                  {billElements}
+                  <h4>
+                    {`Total: ${totalSum(bills)} €`}
+                  </h4>
+                  <hr />
+                </>
+              )}
+
+            {editMode
+              ? (
+                <Edit
+                  editBill={editBill}
+                  currentBill={currentBill}
+                  currentGroup={currentGroup}
+                />
+              )
+              : <Table currentBill={currentBill} editBill={editBill} />}
           </>
         )
         : <h4>No bills saved</h4>}

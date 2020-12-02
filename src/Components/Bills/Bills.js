@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import AddBill from './AddBill/AddBill';
-import ShowBills from './ShowBills/ShowBills';
+import Add from './AddBill/AddBill';
+import Show from './ShowBills/ShowBills';
 import load from '../../Functions/loadFromLocalStorage';
 import './style.css';
 
 function Bills() {
   const [tab, setTab] = useState('addBill');
   const currentGroup = load('currentGroup');
+  const [editMode, setEditMode] = useState(false);
+
+  function editBill() {
+    setEditMode(!editMode);
+  }
   return (
     <Tabs
       transition={false}
@@ -23,10 +28,14 @@ function Bills() {
       }}
     >
       <Tab eventKey="addBill" title="Add bill">
-        <AddBill />
+        <Add />
       </Tab>
       <Tab eventKey="showBill" title="Show bills">
-        <ShowBills currentGroup={currentGroup} />
+        <Show
+          currentGroup={currentGroup}
+          editBill={editBill}
+          editMode={editMode}
+        />
       </Tab>
     </Tabs>
   );

@@ -2,8 +2,9 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 
 function BillTable(showBillProps) {
-  const { currentBill } = showBillProps;
+  const { currentBill, editBill } = showBillProps;
 
+  // Return number of user paid more or less than needed
   function valueChange(paid) {
     const userPaid = paid;
     const { total } = currentBill;
@@ -39,7 +40,26 @@ function BillTable(showBillProps) {
       {currentBill
         ? (
           <>
-            <h2>{currentBill.description}</h2>
+            <label
+              style={{ fontSize: '2rem' }}
+              htmlFor="billDescription"
+            >
+              {currentBill.description}
+
+            </label>
+            <br />
+            <button
+              onClick={() => editBill()}
+              type="button"
+              style={{
+                fontSize: '0.9rem',
+                color: 'black',
+                all: 'unset',
+                cursor: 'pointer',
+              }}
+            >
+              <i className="far fa-edit" />
+            </button>
             <Table responsive striped bordered hover size="sm">
               <thead>
                 <tr>
