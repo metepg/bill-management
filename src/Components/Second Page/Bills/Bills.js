@@ -3,7 +3,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Add from './AddBill/AddBill';
 import Show from './ShowBills/ShowBills';
-import load from '../../Functions/loadFromLocalStorage';
+import load from '../../../Functions/loadFromLocalStorage';
 import './style.css';
 
 function Bills() {

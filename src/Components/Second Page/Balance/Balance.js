@@ -6,6 +6,12 @@ import getBalance from '../../../Functions/Balance/getBalance';
 function Balance() {
   const { groupName, users, bills } = load('currentGroup');
 
+  // Set correct prefix for the balance
+  // (+) for positive (-) for negative
+  const prefix = (balance) => (balance >= 0
+    ? `+${balance}`
+    : `${balance}`);
+
   const userFields = users.map((user, index) => (
     <React.Fragment key={`${user.name}${index * 1}`}>
       <tr>
@@ -16,7 +22,7 @@ function Balance() {
             : 'red',
         }}
         >
-          {`${getBalance(bills, users, users[index])} €`}
+          {`${prefix(getBalance(bills, users, users[index]))} €`}
         </td>
       </tr>
     </React.Fragment>

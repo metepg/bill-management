@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import saveChanges from '../../../Functions/EditBill/saveChanges';
+import saveChanges from '../../../../Functions/EditBill/saveChanges';
 
 function EditBills(showBillProps) {
   const { currentGroup, currentBill, editBill } = showBillProps;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Edit from '../EditBills/EditBills';
 import Table from './BillTable';
-import totalSum from '../../../Functions/groupTotalSum';
+import totalSum from '../../../../Functions/groupTotalSum';
 
 function ShowBills(billsProps) {
   const { currentGroup, editBill, editMode } = billsProps;

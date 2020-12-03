@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Form from './AddBillForm';
-import load from '../../../Functions/loadFromLocalStorage';
+import load from '../../../../Functions/loadFromLocalStorage';
 import './style.css';
 
 // TODO:

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import New from './Components/New/New';
-import Load from './Components/Load/Load';
-import Bills from './Components/Bills/Bills';
-import Group from './Components/Group/Group';
+import New from './Components/Main Page/New/New';
+import Load from './Components/Main Page/Load/Load';
+import Bills from './Components/Second Page/Bills/Bills';
+import Balance from './Components/Second Page/Balance/Balance';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -43,8 +43,8 @@ function App() {
           <Tab eventKey="bills" title="Bills">
             <Bills />
           </Tab>
-          <Tab eventKey="group" title="Group">
-            <Group />
+          <Tab eventKey="balance" title="Balance">
+            <Balance />
           </Tab>
           <Tab eventKey="exit" title="Exit">
             <button
