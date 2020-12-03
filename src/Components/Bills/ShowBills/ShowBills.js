@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Edit from './EditBills/EditBills';
+import Edit from '../EditBills/EditBills';
 import Table from './BillTable';
 import totalSum from '../../../Functions/groupTotalSum';
 
@@ -56,4 +56,4 @@ function ShowBills(billsProps) {
   );
 }
 
-export default ShowBills;
+export default React.memo(ShowBills);

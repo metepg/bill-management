@@ -52,8 +52,6 @@ function BillTable(showBillProps) {
               onClick={() => editBill()}
               type="button"
               style={{
-                fontSize: '0.9rem',
-                color: 'black',
                 all: 'unset',
                 cursor: 'pointer',
               }}

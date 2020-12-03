@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import saveChanges from '../../../../Functions/EditBill/saveChanges';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import saveChanges from '../../../Functions/EditBill/saveChanges';
 
 function EditBills(showBillProps) {
   const { currentGroup, currentBill, editBill } = showBillProps;
@@ -57,15 +58,18 @@ function EditBills(showBillProps) {
         {currentBill.details
           .map((user, index) => (
             <React.Fragment key={`${user.name}${index * 1}`}>
-              <Form.Label>{user.name}</Form.Label>
-              <Form.Control
-                required
-                name={user.name}
-                type="number"
-                step="0.01"
-                defaultValue={user.paid}
-                onBlur={(e) => saveValue(e.target)}
-              />
+              <Form.Group>
+                <Form.Label>{user.name}</Form.Label>
+                <Form.Control
+                  onFocus={(e) => { e.target.value = ''; }}
+                  required
+                  name={user.name}
+                  type="number"
+                  step="0.01"
+                  defaultValue={user.paid}
+                  onBlur={(e) => saveValue(e.target)}
+                />
+              </Form.Group>
             </React.Fragment>
           ))}
         <Form.Label>Total</Form.Label>
@@ -80,10 +84,16 @@ function EditBills(showBillProps) {
           defaultValue={currentBill.total.toFixed(2)}
         />
         <Button type="submit" variant="primary">Save</Button>
-        <Button type="reset" variant="danger" onClick={() => stopEditing()}>Discard</Button>
+        <Button
+          type="reset"
+          variant="danger"
+          onClick={() => stopEditing()}
+        >
+          Discard
+        </Button>
       </Form>
     </>
   );
 }
 
-export default EditBills;
+export default React.memo(EditBills);

@@ -4,6 +4,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import New from './Components/New/New';
 import Load from './Components/Load/Load';
 import Bills from './Components/Bills/Bills';
+import Group from './Components/Group/Group';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -42,7 +43,9 @@ function App() {
           <Tab eventKey="bills" title="Bills">
             <Bills />
           </Tab>
-          <Tab eventKey="manage" title="Manage" />
+          <Tab eventKey="group" title="Group">
+            <Group />
+          </Tab>
           <Tab eventKey="exit" title="Exit">
             <button
               type="button"
