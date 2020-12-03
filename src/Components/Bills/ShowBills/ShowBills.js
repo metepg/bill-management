@@ -56,4 +56,4 @@ function ShowBills(billsProps) {
   );
 }
 
-export default React.memo(ShowBills);
+export default ShowBills;

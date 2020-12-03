@@ -61,13 +61,14 @@ function EditBills(showBillProps) {
               <Form.Group>
                 <Form.Label>{user.name}</Form.Label>
                 <Form.Control
+                  onBlur={(e) => saveValue(e.target)}
                   onFocus={(e) => { e.target.value = ''; }}
                   required
                   name={user.name}
                   type="number"
                   step="0.01"
+                  placeholder="0.00"
                   defaultValue={user.paid}
-                  onBlur={(e) => saveValue(e.target)}
                 />
               </Form.Group>
             </React.Fragment>

@@ -22,6 +22,7 @@ function AddBillForm(AddBillProps) {
         </Form.Label>
         <Form.Control
           onBlur={(e) => saveValue(e.target)}
+          onFocus={(e) => { e.target.value = ''; }}
           required
           name={name}
           type="number"

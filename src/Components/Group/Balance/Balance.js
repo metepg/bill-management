@@ -5,7 +5,6 @@ import getBalance from '../../../Functions/Balance/getBalance';
 
 function Balance() {
   const { groupName, users, bills } = load('currentGroup');
-  console.log(groupName, users, bills);
 
   const userFields = users.map((user, index) => (
     <React.Fragment key={`${user.name}${index * 1}`}>
