@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/bill-management/static/css/main.48ad0513.chunk.css",
-    "main.js": "/bill-management/static/js/main.2a876b91.chunk.js",
-    "main.js.map": "/bill-management/static/js/main.2a876b91.chunk.js.map",
+    "main.js": "/bill-management/static/js/main.9310925a.chunk.js",
+    "main.js.map": "/bill-management/static/js/main.9310925a.chunk.js.map",
     "runtime-main.js": "/bill-management/static/js/runtime-main.b8cd802b.js",
     "runtime-main.js.map": "/bill-management/static/js/runtime-main.b8cd802b.js.map",
     "static/css/2.1a02f21c.chunk.css": "/bill-management/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.9da87e63.chunk.js": "/bill-management/static/js/2.9da87e63.chunk.js",
-    "static/js/2.9da87e63.chunk.js.map": "/bill-management/static/js/2.9da87e63.chunk.js.map",
+    "static/js/2.0f42b6aa.chunk.js": "/bill-management/static/js/2.0f42b6aa.chunk.js",
+    "static/js/2.0f42b6aa.chunk.js.map": "/bill-management/static/js/2.0f42b6aa.chunk.js.map",
     "index.html": "/bill-management/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/bill-management/static/css/2.1a02f21c.chunk.css.map",
     "static/css/main.48ad0513.chunk.css.map": "/bill-management/static/css/main.48ad0513.chunk.css.map",
-    "static/js/2.9da87e63.chunk.js.LICENSE.txt": "/bill-management/static/js/2.9da87e63.chunk.js.LICENSE.txt"
+    "static/js/2.0f42b6aa.chunk.js.LICENSE.txt": "/bill-management/static/js/2.0f42b6aa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b8cd802b.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.9da87e63.chunk.js",
+    "static/js/2.0f42b6aa.chunk.js",
     "static/css/main.48ad0513.chunk.css",
-    "static/js/main.2a876b91.chunk.js"
+    "static/js/main.9310925a.chunk.js"
   ]
 }
