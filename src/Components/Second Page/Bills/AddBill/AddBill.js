@@ -50,4 +50,4 @@ function AddBill() {
   );
 }
 
-export default React.memo(AddBill);
+export default AddBill;

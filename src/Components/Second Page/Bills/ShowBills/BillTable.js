@@ -45,13 +45,6 @@ function BillTable(showBillProps) {
       {currentBill
         ? (
           <>
-            <label
-              style={{ fontSize: '2rem' }}
-              htmlFor="billDescription"
-            >
-              {currentBill.description}
-
-            </label>
             <br />
             <button
               onClick={() => editBill()}
@@ -59,6 +52,7 @@ function BillTable(showBillProps) {
               style={{
                 all: 'unset',
                 cursor: 'pointer',
+                marginLeft: '20rem',
               }}
             >
               <i className="far fa-edit" />
@@ -85,4 +79,4 @@ function BillTable(showBillProps) {
   );
 }
 
-export default React.memo(BillTable);
+export default BillTable;

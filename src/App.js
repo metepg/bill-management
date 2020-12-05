@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MainPage from './Components/Main Page/Main Page';
 import SecondPage from './Components/Second Page/Second Page';
 import load from './Functions/loadFromLocalStorage';
@@ -26,6 +26,10 @@ function App() {
   function setBill(index) {
     setCurrentBill(bills[index]);
   }
+
+  useEffect(() => {
+    console.log('hep');
+  }, [currentGroup]);
 
   return (
     <main className="app-container">

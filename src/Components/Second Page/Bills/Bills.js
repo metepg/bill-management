@@ -15,14 +15,7 @@ function Bills(pageProps) {
   const billElements = bills
     ? bills.map((bill, index) => (
       <React.Fragment key={`${index * 1}${bill.description}`}>
-        <button
-          type="button"
-          onClick={() => setBill(index)}
-        >
-          {bill.description}
-        </button>
-        <label htmlFor="bills">{`${bill.total} €`}</label>
-        <br />
+        <option value={index}>{`${bill.description} (${(bill.total).toFixed(2)} €)`}</option>
       </React.Fragment>
     ))
     : null;
@@ -52,6 +45,7 @@ function Bills(pageProps) {
               currentBill={currentBill}
               billElements={billElements}
               bills={bills}
+              setBill={setBill}
             />
           )
           : <h4>No bills saved</h4>}
