@@ -6,14 +6,27 @@ import Show from './ShowBills/ShowBills';
 import load from '../../../Functions/loadFromLocalStorage';
 import './style.css';
 
-function Bills() {
+function Bills(pageProps) {
+  const { editBill, currentBill, setBill } = pageProps;
   const [tab, setTab] = useState('addBill');
   const currentGroup = load('currentGroup');
-  const [editMode, setEditMode] = useState(false);
+  const { bills } = currentGroup;
 
-  function editBill() {
-    setEditMode(!editMode);
-  }
+  const billElements = bills
+    ? bills.map((bill, index) => (
+      <React.Fragment key={`${index * 1}${bill.description}`}>
+        <button
+          type="button"
+          onClick={() => setBill(index)}
+        >
+          {bill.description}
+        </button>
+        <label htmlFor="bills">{`${bill.total} €`}</label>
+        <br />
+      </React.Fragment>
+    ))
+    : null;
+
   return (
     <Tabs
       transition={false}
@@ -31,11 +44,18 @@ function Bills() {
         <Add />
       </Tab>
       <Tab eventKey="showBill" title="Show bills">
-        <Show
-          currentGroup={currentGroup}
-          editBill={editBill}
-          editMode={editMode}
-        />
+        { bills
+          ? (
+            <Show
+              currentGroup={currentGroup}
+              editBill={editBill}
+              currentBill={currentBill}
+              billElements={billElements}
+              bills={bills}
+            />
+          )
+          : <h4>No bills saved</h4>}
+
       </Tab>
     </Tabs>
   );

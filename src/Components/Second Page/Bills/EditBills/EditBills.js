@@ -46,14 +46,17 @@ function EditBills(showBillProps) {
     // Calulate total sum value from user inputs
     totalSum.current.value = Object.values(usersPaid)
       .reduce((a, b) => a + b)
-      .toFixed(2) || 0;
+      .toFixed(2);
   }
 
   return (
     <>
+      <h2 style={{ padding: '15%' }}>
+        {`Edit bill ${currentBill.description}`}
+      </h2>
       <Form
         onSubmit={(e) => handleEdit(e)}
-        style={{ margin: '1rem 6rem' }}
+        style={{ margin: '0 6rem' }}
       >
         {currentBill.details
           .map((user, index) => (

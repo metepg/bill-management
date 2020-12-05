@@ -16,28 +16,29 @@ function BillTable(showBillProps) {
     return prefix((userPaid - total / participants).toFixed(2));
   }
 
-  const billData = currentBill ? currentBill
-    .details
-    .map((user, index) => (
-      <React.Fragment key={`${user.name}${index * 1}`}>
-        <tr>
-          <td>{user.name}</td>
-          <td>{`${user.paid} €`}</td>
-          <td
+  const billData = currentBill
+    ? currentBill
+      .details
+      .map((user, index) => (
+        <React.Fragment key={`${user.name}${index * 1}`}>
+          <tr>
+            <td>{user.name}</td>
+            <td>{`${user.paid} €`}</td>
+            <td
           // Green color if user paid more than needed
           // Red color if user paid less than needed
-            style={{
-              color: valueChange(user.paid) >= 0
-                ? 'green'
-                : 'red',
-            }}
-          >
-            {`${valueChange(user.paid)} €`}
+              style={{
+                color: valueChange(user.paid) >= 0
+                  ? 'green'
+                  : 'red',
+              }}
+            >
+              {`${valueChange(user.paid)} €`}
 
-          </td>
-        </tr>
-      </React.Fragment>
-    )) : null;
+            </td>
+          </tr>
+        </React.Fragment>
+      )) : null;
 
   return (
     <>
