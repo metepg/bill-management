@@ -27,6 +27,7 @@
   .app-container {
     width: 100%;
     height: 750px;
+    margin: 0 auto;
   }
   .form-group {
     margin: 0 auto;
