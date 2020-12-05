@@ -27,9 +27,10 @@ function getBalance(bills, userNames, userName) {
   const userPaidTotal = userPayments
     .reduce((payment, total) => payment + total);
 
-  // Calculate and set user balance as integer with 2 decimals
+  // Calculate and set user balance as integer
   // return balance
-  const userBalance = Number(userPaidTotal - totalSum / participants).toFixed(2);
+  const userBalance = Math
+    .round(((userPaidTotal - totalSum / participants)) * 100) / 100;
   return userBalance;
 }
 

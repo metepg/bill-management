@@ -34,7 +34,7 @@ function ShowBills(billsProps) {
                 <>
                   {billElements}
                   <h4>
-                    {`Total: ${totalSum(bills)} €`}
+                    {`Total: ${totalSum(bills).toFixed(2)} €`}
                   </h4>
                   <hr />
                 </>

@@ -4,12 +4,16 @@ import Table from 'react-bootstrap/Table';
 function BillTable(showBillProps) {
   const { currentBill, editBill } = showBillProps;
 
+  const prefix = (amount) => (amount >= 0
+    ? `+${amount}`
+    : `${amount}`);
+
   // Return number of user paid more or less than needed
   function valueChange(paid) {
     const userPaid = paid;
     const { total } = currentBill;
     const participants = currentBill.details.length;
-    return (userPaid - total / participants).toFixed(2);
+    return prefix((userPaid - total / participants).toFixed(2));
   }
 
   const billData = currentBill ? currentBill
@@ -71,7 +75,7 @@ function BillTable(showBillProps) {
               </tbody>
             </Table>
             <h4 style={{ textAlign: 'center' }}>
-              {`Total ${currentBill.total} €`}
+              {`Total ${currentBill.total.toFixed(2)} €`}
             </h4>
           </>
         )

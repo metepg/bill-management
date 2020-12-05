@@ -44,4 +44,4 @@ function Balance() {
   );
 }
 
-export default React.memo(Balance);
+export default Balance;

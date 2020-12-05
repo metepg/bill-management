@@ -25,6 +25,7 @@ function saveBill(currentGroup, bill) {
   return true;
 }
 
+// Starts with this function
 function handleAddBillForm(form, submitBtn) {
   form.preventDefault();
   const button = submitBtn;

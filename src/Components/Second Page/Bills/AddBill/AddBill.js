@@ -25,11 +25,11 @@ function AddBill() {
 
   // Handle user inputs
   function saveValue(e) {
-    const userPaid = Number(updateField(e));
+    const userPaid = updateField(e);
     // Save user input to correct username
     usersPaid = {
       ...usersPaid,
-      [e.name]: userPaid,
+      [e.name]: Number(userPaid),
     };
 
     // Calulate total sum value from user inputs
