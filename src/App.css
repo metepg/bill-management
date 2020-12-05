@@ -5,6 +5,7 @@
   margin: 3rem auto;
   text-align: center;
   background-color: #fefefe;
+  overflow: hidden;
 }
 
 .nav-tabs {
@@ -30,18 +31,5 @@
   }
   .form-group {
     margin: 0 auto;
-  }
-}
-
-@media only screen and (max-height: 600px) {
-  .app-container {
-    height: 600px;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-height: 500px) {
-  .app-container {
-    height: 500px;
   }
 }
