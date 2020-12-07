@@ -30,7 +30,7 @@ function Balance() {
 
   return (
     <>
-      <h2>{groupName}</h2>
+      <h2 style={{ paddingTop: '10%' }}>{groupName}</h2>
       <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>

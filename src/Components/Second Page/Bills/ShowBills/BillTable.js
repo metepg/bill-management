@@ -46,13 +46,15 @@ function BillTable(showBillProps) {
         ? (
           <>
             <br />
+            <h1>{currentBill.description}</h1>
             <button
               onClick={() => editBill()}
               type="button"
               style={{
                 all: 'unset',
                 cursor: 'pointer',
-                marginLeft: '20rem',
+                float: 'right',
+                fontSize: '1.3rem',
               }}
             >
               <i className="far fa-edit" />
@@ -69,9 +71,11 @@ function BillTable(showBillProps) {
                 {billData}
               </tbody>
             </Table>
-            <h4 style={{ textAlign: 'center' }}>
-              {`Total ${currentBill.total.toFixed(2)} €`}
-            </h4>
+            <i>
+              <h5 style={{ textAlign: 'center' }}>
+                {`Bill amount: ${currentBill.total.toFixed(2)} €`}
+              </h5>
+            </i>
           </>
         )
         : null}

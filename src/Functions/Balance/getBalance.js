@@ -1,7 +1,4 @@
-// Calculate total sum from all bills
-const addTogether = (array) => array
-  .map((bill) => bill.total)
-  .reduce((a, b) => a + b);
+import totalSumFromBills from '../totalSum';
 
 // Get user index from user names array
 const getIndex = (userNames, user) => userNames
@@ -14,7 +11,7 @@ function getBalance(bills, userNames, userName) {
   const participants = userNames.length;
 
   // Total sum from bills
-  const totalSum = addTogether(bills);
+  const totalSum = totalSumFromBills(bills);
 
   // Get current user index from userNames array
   const userIndex = getIndex(userNames, userName);
