@@ -8,6 +8,8 @@ function AddBillForm(AddBillProps) {
     userNames,
     saveValue,
     totalSum,
+    bills,
+    setBill,
   } = AddBillProps;
 
   const formRef = useRef();
@@ -45,6 +47,9 @@ function AddBillForm(AddBillProps) {
           ? formRef.current.reset()
           : alert('Something went wrong!');
         buttonRef.current.disabled = false;
+        setBill(bills
+          ? bills.length
+          : 0);
       }}
     >
       <Form.Label

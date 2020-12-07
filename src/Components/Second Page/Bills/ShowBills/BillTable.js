@@ -8,7 +8,7 @@ function BillTable(showBillProps) {
     ? `+${amount}`
     : `${amount}`);
 
-  // Return number of user paid more or less than needed
+  // User balance
   function valueChange(paid) {
     const userPaid = paid;
     const { total } = currentBill;

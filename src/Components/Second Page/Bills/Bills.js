@@ -8,17 +8,9 @@ import './style.css';
 
 function Bills(pageProps) {
   const { editBill, currentBill, setBill } = pageProps;
-  const [tab, setTab] = useState('addBill');
+  const [tab, setTab] = useState(currentBill ? 'showBill' : 'addBill');
   const currentGroup = load('currentGroup');
   const { bills } = currentGroup;
-
-  const billElements = bills
-    ? bills.map((bill, index) => (
-      <React.Fragment key={`${index * 1}${bill.description}`}>
-        <option value={index}>{`${bill.description} (${(bill.total).toFixed(2)} €)`}</option>
-      </React.Fragment>
-    ))
-    : null;
 
   return (
     <Tabs
@@ -34,7 +26,7 @@ function Bills(pageProps) {
       }}
     >
       <Tab eventKey="addBill" title="Add bill">
-        <Add />
+        <Add setBill={setBill} bills={bills} />
       </Tab>
       <Tab eventKey="showBill" title="Show bills">
         { bills
@@ -43,7 +35,6 @@ function Bills(pageProps) {
               currentGroup={currentGroup}
               editBill={editBill}
               currentBill={currentBill}
-              billElements={billElements}
               bills={bills}
               setBill={setBill}
             />

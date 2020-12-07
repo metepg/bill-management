@@ -6,7 +6,8 @@ import './style.css';
 // TODO:
 // Fix functions updatefield and saveValue
 
-function AddBill() {
+function AddBill(pageProps) {
+  const { bills, setBill } = pageProps;
   const { users } = load('currentGroup');
   const totalSum = useRef(0);
 
@@ -45,6 +46,8 @@ function AddBill() {
         userNames={users}
         usersPaid={usersPaid}
         totalSum={totalSum}
+        bills={bills}
+        setBill={setBill}
       />
     </section>
   );
