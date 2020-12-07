@@ -17,8 +17,8 @@ function AddBillForm(AddBillProps) {
 
   // Create input fields according to usernames
   function getInputFields(users) {
-    return users.map((name) => (
-      <React.Fragment key={name}>
+    return users.map((name, index) => (
+      <React.Fragment key={`${name}${index * Math.random(2)}`}>
         <Form.Label>
           {name}
         </Form.Label>

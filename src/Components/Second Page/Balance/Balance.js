@@ -43,12 +43,18 @@ function Balance() {
         </thead>
         <tbody>{userFields}</tbody>
       </Table>
-      <Chart
-        totalValue={totalSum(bills)}
-        users={users}
-        bills={bills}
-      />
-      <i><h4>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
+      {bills
+        ? (
+          <>
+            <Chart
+              totalValue={totalSum(bills)}
+              users={users}
+              bills={bills}
+            />
+            <i><h4>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
+          </>
+        )
+        : null}
     </>
   );
 }

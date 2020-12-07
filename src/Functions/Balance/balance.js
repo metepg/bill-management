@@ -5,6 +5,7 @@ const getIndex = (userNames, user) => userNames
   .findIndex((name) => name === user);
 
 function userPaidTotal(bills, user) {
+  if (!bills) return 0;
   // Get all user payments from bills
   const userPayments = bills
     .map((bill) => Number(bill.details[user].paid));
