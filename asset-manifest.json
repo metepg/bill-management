@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bill-management/static/css/main.f93ae44f.chunk.css",
-    "main.js": "/bill-management/static/js/main.8aa6372d.chunk.js",
-    "main.js.map": "/bill-management/static/js/main.8aa6372d.chunk.js.map",
+    "main.js": "/bill-management/static/js/main.b4239c28.chunk.js",
+    "main.js.map": "/bill-management/static/js/main.b4239c28.chunk.js.map",
     "runtime-main.js": "/bill-management/static/js/runtime-main.b8cd802b.js",
     "runtime-main.js.map": "/bill-management/static/js/runtime-main.b8cd802b.js.map",
     "static/css/2.1a02f21c.chunk.css": "/bill-management/static/css/2.1a02f21c.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.e2407723.chunk.js",
     "static/css/main.f93ae44f.chunk.css",
-    "static/js/main.8aa6372d.chunk.js"
+    "static/js/main.b4239c28.chunk.js"
   ]
 }
