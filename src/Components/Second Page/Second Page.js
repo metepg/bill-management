@@ -29,7 +29,10 @@ function SecondPage(appProps) {
         <Tab eventKey="exit" title="Exit">
           <button
             type="button"
-            onClick={() => changePage('main', 'new')}
+            onClick={() => {
+              changePage('main', 'new');
+              setBill('');
+            }}
             style={{ marginTop: '5rem', fontSize: '2rem' }}
           >
             Exit
