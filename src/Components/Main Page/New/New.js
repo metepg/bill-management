@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Users from './UserNames';
 import validate from '../../../Functions/validate';
 import './style.css';
 
 function New(appProps) {
   const { changePage } = appProps;
+  const [participants, setParticipants] = useState(2);
 
   function formSubmit(e) {
     e.preventDefault();
@@ -19,44 +21,38 @@ function New(appProps) {
   }
 
   return (
-    <Form onSubmit={formSubmit}>
-      <Form.Group controlId="groupName">
-        <Form.Label>Group name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="The meters"
-          name="groupName"
-          defaultValue="The Meters"
-        />
-      </Form.Group>
-      <Form.Group controlId="users">
-        <Form.Label>Users</Form.Label>
-        <Form.Control
-          required
-          type="text"
-          placeholder="User 1"
-          name="user1"
-          defaultValue="eka nimi"
-        />
-        <Form.Control
-          required
-          type="text"
-          placeholder="User 2"
-          name="user2"
-          defaultValue="toka nimi"
-        />
-        <Form.Control
-          required
-          type="text"
-          placeholder="User 3"
-          name="user3"
-          defaultValue="kolmas nimi"
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <>
+      <Form onSubmit={formSubmit}>
+        <Form.Group controlId="groupName">
+          <Form.Label>Group name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Max. 20 characters"
+            name="groupName"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Users</Form.Label>
+          <Form.Control as="select" onChange={(e) => setParticipants(e.target.value)}>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7</option>
+            <option value={8}>8</option>
+          </Form.Control>
+        </Form.Group>
+        <Form.Group controlId="users">
+          <Form.Label>Users</Form.Label>
+          <Users users={participants} />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </>
   );
 }
 
