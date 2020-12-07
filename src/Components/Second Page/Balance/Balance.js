@@ -1,16 +1,19 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import Chart from './Chart';
 import load from '../../../Functions/loadFromLocalStorage';
-import getBalance from '../../../Functions/Balance/getBalance';
+import balance from '../../../Functions/Balance/balance';
+import totalSum from '../../../Functions/totalSum';
 
 function Balance() {
   const { groupName, users, bills } = load('currentGroup');
+  const { getBalance } = balance;
 
   // Set correct prefix for the balance
   // (+) for positive (-) for negative
-  const prefix = (balance) => (balance >= 0
-    ? `+${balance}`
-    : `${balance}`);
+  const prefix = (userBalance) => (userBalance >= 0
+    ? `+${userBalance}`
+    : `${userBalance}`);
 
   const userFields = users.map((user, index) => (
     <React.Fragment key={`${user.name}${index * 1}`}>
@@ -40,6 +43,12 @@ function Balance() {
         </thead>
         <tbody>{userFields}</tbody>
       </Table>
+      <Chart
+        totalValue={totalSum(bills)}
+        users={users}
+        bills={bills}
+      />
+      <i><h4>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
     </>
   );
 }

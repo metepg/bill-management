@@ -1,6 +1,5 @@
 import React from 'react';
 import Table from './BillTable';
-import totalSum from '../../../../Functions/totalSum';
 
 function ShowBills(billsProps) {
   const {
@@ -28,8 +27,6 @@ function ShowBills(billsProps) {
         {billElements}
       </select>
       <br />
-      <br />
-      <i><h4>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
       <hr />
       <Table
         currentBill={currentBill}

@@ -4,9 +4,20 @@ import totalSumFromBills from '../totalSum';
 const getIndex = (userNames, user) => userNames
   .findIndex((name) => name === user);
 
+function userPaidTotal(bills, user) {
+  // Get all user payments from bills
+  const userPayments = bills
+    .map((bill) => Number(bill.details[user].paid));
+
+  // Add user payments together to get total sum
+  return userPayments
+    .reduce((payment, total) => payment + total);
+}
+
 // Calculate total balance for user
 function getBalance(bills, userNames, userName) {
   if (!bills) return 0;
+
   // How many users in group
   const participants = userNames.length;
 
@@ -16,19 +27,9 @@ function getBalance(bills, userNames, userName) {
   // Get current user index from userNames array
   const userIndex = getIndex(userNames, userName);
 
-  // Get all user payments from bills
-  const userPayments = bills
-    .map((bill) => Number(bill.details[userIndex].paid));
-
-  // Add user payments together to get total sum
-  const userPaidTotal = userPayments
-    .reduce((payment, total) => payment + total);
-
-  // Calculate and set user balance as integer
   // return balance
-  const userBalance = Math
-    .round(((userPaidTotal - totalSum / participants)) * 100) / 100;
-  return userBalance;
+  return Math
+    .round(((userPaidTotal(bills, userIndex) - totalSum / participants)) * 100) / 100;
 }
 
-export default getBalance;
+export default { getIndex, userPaidTotal, getBalance };
