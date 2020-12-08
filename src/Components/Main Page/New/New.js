@@ -22,7 +22,7 @@ function New(appProps) {
 
   return (
     <>
-      <Form onSubmit={formSubmit}>
+      <Form onSubmit={formSubmit} autoComplete="off">
         <Form.Group controlId="groupName">
           <Form.Label>
             Group name

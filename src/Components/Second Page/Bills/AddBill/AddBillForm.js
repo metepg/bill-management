@@ -41,6 +41,7 @@ function AddBillForm(AddBillProps) {
 
   return (
     <Form
+      autoComplete="off"
       ref={formRef}
       onSubmit={(e) => {
         saveBill(e, buttonRef)
