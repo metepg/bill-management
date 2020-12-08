@@ -1,7 +1,7 @@
 import React from 'react';
-import load from '../../Functions/loadFromLocalStorage';
-import currentGroup from '../../Functions/currentGroup';
-import save from '../../Functions/saveToLocalStorage';
+import load from '../../../Functions/loadFromLocalStorage';
+import currentGroup from '../../../Functions/currentGroup';
+import save from '../../../Functions/saveToLocalStorage';
 
 function Load(appProps) {
   const { changePage } = appProps;

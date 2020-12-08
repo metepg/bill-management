@@ -1,0 +1,7 @@
+.add-bill-controller {
+  margin: 2rem 6rem 1rem 6rem;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}

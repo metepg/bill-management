@@ -1,3 +1,4 @@
+import 'core-js/es/object';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import Form from './AddBillForm';
-import load from '../../../Functions/loadFromLocalStorage';
+import load from '../../../../Functions/loadFromLocalStorage';
 import './style.css';
 
-// TODO:
-// Fix functions updatefield and saveValue
-
-function AddBill() {
+function AddBill(pageProps) {
+  const { bills, setBill } = pageProps;
   const { users } = load('currentGroup');
   const totalSum = useRef(0);
 
@@ -25,11 +23,11 @@ function AddBill() {
 
   // Handle user inputs
   function saveValue(e) {
-    const userPaid = Number(updateField(e));
+    const userPaid = updateField(e);
     // Save user input to correct username
     usersPaid = {
       ...usersPaid,
-      [e.name]: userPaid,
+      [e.name]: Number(userPaid),
     };
 
     // Calulate total sum value from user inputs
@@ -45,9 +43,11 @@ function AddBill() {
         userNames={users}
         usersPaid={usersPaid}
         totalSum={totalSum}
+        bills={bills}
+        setBill={setBill}
       />
     </section>
   );
 }
 
-export default React.memo(AddBill);
+export default AddBill;
