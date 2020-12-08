@@ -6,6 +6,7 @@
   text-align: center;
   background-color: #fefefe;
   overflow: auto;
+  resize: both;
 }
 
 .nav-tabs {
