@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/bill-management/static/css/main.4f5dad5a.chunk.css",
-    "main.js": "/bill-management/static/js/main.79c15c30.chunk.js",
-    "main.js.map": "/bill-management/static/js/main.79c15c30.chunk.js.map",
+    "main.js": "/bill-management/static/js/main.ec42f429.chunk.js",
+    "main.js.map": "/bill-management/static/js/main.ec42f429.chunk.js.map",
     "runtime-main.js": "/bill-management/static/js/runtime-main.b8cd802b.js",
     "runtime-main.js.map": "/bill-management/static/js/runtime-main.b8cd802b.js.map",
     "static/css/2.1a02f21c.chunk.css": "/bill-management/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.e2407723.chunk.js": "/bill-management/static/js/2.e2407723.chunk.js",
-    "static/js/2.e2407723.chunk.js.map": "/bill-management/static/js/2.e2407723.chunk.js.map",
+    "static/js/2.dd673caa.chunk.js": "/bill-management/static/js/2.dd673caa.chunk.js",
+    "static/js/2.dd673caa.chunk.js.map": "/bill-management/static/js/2.dd673caa.chunk.js.map",
     "index.html": "/bill-management/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/bill-management/static/css/2.1a02f21c.chunk.css.map",
     "static/css/main.4f5dad5a.chunk.css.map": "/bill-management/static/css/main.4f5dad5a.chunk.css.map",
-    "static/js/2.e2407723.chunk.js.LICENSE.txt": "/bill-management/static/js/2.e2407723.chunk.js.LICENSE.txt"
+    "static/js/2.dd673caa.chunk.js.LICENSE.txt": "/bill-management/static/js/2.dd673caa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b8cd802b.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.e2407723.chunk.js",
+    "static/js/2.dd673caa.chunk.js",
     "static/css/main.4f5dad5a.chunk.css",
-    "static/js/main.79c15c30.chunk.js"
+    "static/js/main.ec42f429.chunk.js"
   ]
 }
