@@ -38,8 +38,8 @@ function Chart(balanceProps) {
       totalValue={totalValue}
       style={{ height: '200px' }}
       data={userData}
-      label={({ dataEntry }) => `${dataEntry.title}(${dataEntry.value})€`}
-      labelPosition={101}
+      label={({ dataEntry }) => `${dataEntry.title}(${dataEntry.value}€)`}
+      labelPosition={106}
       labelStyle={{ ...defaultLabelStyle }}
     />
   );
