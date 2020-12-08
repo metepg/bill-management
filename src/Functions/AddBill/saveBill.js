@@ -6,7 +6,6 @@ function getUserInfo(data) {
   const billInfo = data;
   // Remove all keys except how much users paid
   delete billInfo.description;
-  delete billInfo.evenShares;
   delete billInfo.total;
 
   // Return array of objects
@@ -36,7 +35,6 @@ function handleAddBillForm(form, submitBtn) {
   const data = {
     description: values.description,
     total: Number(values.total),
-    evenShares: !!values.evenShares,
     details: getUserInfo(values),
   };
   const currentGroup = load('currentGroup');

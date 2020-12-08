@@ -3,9 +3,6 @@ import Form from './AddBillForm';
 import load from '../../../../Functions/loadFromLocalStorage';
 import './style.css';
 
-// TODO:
-// Fix functions updatefield and saveValue
-
 function AddBill(pageProps) {
   const { bills, setBill } = pageProps;
   const { users } = load('currentGroup');

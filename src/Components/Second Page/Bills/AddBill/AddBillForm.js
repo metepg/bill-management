@@ -17,23 +17,23 @@ function AddBillForm(AddBillProps) {
 
   // Create input fields according to usernames
   function getInputFields(users) {
-    return users.map((name, index) => (
-      <React.Fragment key={`${name}${index * Math.random(2)}`}>
+    return users.map((name) => (
+      <React.Fragment key={name}>
         <Form.Label>
           {name}
+          <Form.Control
+            onBlur={(e) => saveValue(e.target)}
+            onFocus={(e) => { e.target.value = ''; }}
+            required
+            name={name}
+            type="number"
+            step="0.01"
+            placeholder="0.00"
+            onKeyDown={(e) => (e.key === 'Enter'
+              ? e.preventDefault()
+              : null)}
+          />
         </Form.Label>
-        <Form.Control
-          onBlur={(e) => saveValue(e.target)}
-          onFocus={(e) => { e.target.value = ''; }}
-          required
-          name={name}
-          type="number"
-          step="0.01"
-          placeholder="0.00"
-          onKeyDown={(e) => (e.key === 'Enter'
-            ? e.preventDefault()
-            : null)}
-        />
         <br />
       </React.Fragment>
     ));
@@ -69,44 +69,28 @@ function AddBillForm(AddBillProps) {
             : null)}
         />
       </Form.Label>
-      <Form.Group controlId="usersPaid">
+      <Form.Group>
         {getInputFields(userNames)}
       </Form.Group>
       <Form.Group controlId="totalSum">
-        <Form.Label>Total sum:</Form.Label>
-        <Form.Control
-          type="number"
-          name="total"
-          step="0.01"
-          placeholder="0.00"
-          ref={totalSum}
-          tabIndex={-1}
-          readOnly
-        />
+        <Form.Label>
+          Total sum:
+          <Form.Control
+            type="number"
+            name="total"
+            step="0.01"
+            placeholder="0.00"
+            ref={totalSum}
+            tabIndex={-1}
+            readOnly
+          />
+        </Form.Label>
       </Form.Group>
-      <Form.Label style={{ marginBottom: '1rem' }}>
-        Even shares?
-        <input
-          name="evenShares"
-          style={{
-            marginLeft: '0.5rem',
-            marginRight: '0.4rem',
-          }}
-          className="toggle"
-          type="checkbox"
-          defaultChecked
-          onKeyDown={(e) => (e.key === 'Enter'
-            ? e.preventDefault()
-            : null)}
-        />
-      </Form.Label>
       <br />
-
       <Button variant="primary" type="submit" ref={buttonRef}>
         Submit
       </Button>
     </Form>
   );
 }
-
 export default AddBillForm;

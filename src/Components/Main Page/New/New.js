@@ -24,28 +24,34 @@ function New(appProps) {
     <>
       <Form onSubmit={formSubmit}>
         <Form.Group controlId="groupName">
-          <Form.Label>Group name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Max. 20 characters"
-            name="groupName"
-            required
-          />
+          <Form.Label>
+            Group name
+            <Form.Control
+              type="text"
+              placeholder="Max. 20 characters"
+              name="groupName"
+              required
+            />
+          </Form.Label>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Users</Form.Label>
-          <Form.Control as="select" onChange={(e) => setParticipants(e.target.value)}>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7</option>
-          </Form.Control>
+          <Form.Label>
+            Users
+            <Form.Control as="select" onChange={(e) => setParticipants(e.target.value)}>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+            </Form.Control>
+          </Form.Label>
         </Form.Group>
         <Form.Group controlId="users">
-          <Form.Label>Users</Form.Label>
-          <Users users={participants} />
+          <Form.Label>
+            Users
+            <Users users={participants} />
+          </Form.Label>
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit

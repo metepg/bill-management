@@ -4,13 +4,27 @@ import Tab from 'react-bootstrap/Tab';
 import Bills from './Bills/Bills';
 import Balance from './Balance/Balance';
 import Edit from './Bills/EditBills/EditBills';
+import load from '../../Functions/loadFromLocalStorage';
 
 function SecondPage(appProps) {
   const {
-    tab, setTab, changePage, setBill, currentBill, bills, currentGroup,
+    tab, setTab, changePage,
   } = appProps;
 
+  const [currentBill, setCurrentBill] = useState();
   const [editMode, setEditMode] = useState(false);
+  const currentGroup = load('currentGroup');
+  let { bills } = currentGroup;
+
+  function setBill(index) {
+    bills = load('currentGroup').bills;
+    index
+      ? setCurrentBill(bills[index])
+      : setCurrentBill('');
+  }
+
+  // When user edits bill
+  // Disable everything else
   function editBill() {
     setEditMode(!editMode);
   }
@@ -27,7 +41,6 @@ function SecondPage(appProps) {
         : (
           <Tabs
             transition={false}
-            id="controlled"
             activeKey={tab}
             onSelect={(k) => setTab(k)}
           >
