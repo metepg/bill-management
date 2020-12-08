@@ -55,6 +55,7 @@ function BillTable(showBillProps) {
                 cursor: 'pointer',
                 float: 'right',
                 fontSize: '1.3rem',
+                paddingRight: '1rem',
               }}
             >
               <i className="far fa-edit" />

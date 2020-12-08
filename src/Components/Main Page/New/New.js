@@ -47,7 +47,7 @@ function New(appProps) {
             </Form.Control>
           </Form.Label>
         </Form.Group>
-        <Form.Group controlId="users">
+        <Form.Group>
           <Form.Label>
             Users
             <Users users={participants} />
