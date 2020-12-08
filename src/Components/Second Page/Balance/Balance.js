@@ -51,7 +51,7 @@ function Balance() {
               users={users}
               bills={bills}
             />
-            <i><h4>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
+            <i><h4 style={{ marginBottom: '2rem' }}>{`Total: ${totalSum(bills).toFixed(2)} €`}</h4></i>
           </>
         )
         : null}

@@ -14,6 +14,7 @@ function UserNames(props1) {
           type="text"
           placeholder={`User ${i + 1}`}
           name={`User ${i}`}
+          onFocus={(e) => { e.target.value = ''; }}
         />
       </React.Fragment>,
     );
