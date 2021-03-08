@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import svgEdit from '../EditBills/edit.svg';
 
 function BillTable(showBillProps) {
   const { currentBill, editBill } = showBillProps;
@@ -45,6 +46,7 @@ function BillTable(showBillProps) {
       {currentBill
         ? (
           <>
+
             <br />
             <h1>{currentBill.description}</h1>
             <button
@@ -58,7 +60,8 @@ function BillTable(showBillProps) {
                 paddingRight: '1rem',
               }}
             >
-              <i className="far fa-edit" />
+              Edit
+              <img alt="edit" src={svgEdit} />
             </button>
             <Table responsive striped bordered hover size="sm">
               <thead>
