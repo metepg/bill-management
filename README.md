@@ -1,5 +1,5 @@
 ### Bill management tool
 [Link to app](https://metepg.github.io/bill-management)
 
-Edit button showing up only in Firefox  
+Edit bills button not showing up
 (might fix later)
