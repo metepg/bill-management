@@ -1,6 +1,5 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import svgEdit from '../EditBills/edit.svg';
 
 function BillTable(showBillProps) {
   const { currentBill, editBill } = showBillProps;
@@ -53,15 +52,14 @@ function BillTable(showBillProps) {
               onClick={() => editBill()}
               type="button"
               style={{
-                all: 'unset',
                 cursor: 'pointer',
                 float: 'right',
                 fontSize: '1.3rem',
                 paddingRight: '1rem',
+                margin: '5px',
               }}
             >
               Edit
-              <img alt="edit" src={svgEdit} />
             </button>
             <Table responsive striped bordered hover size="sm">
               <thead>
